@@ -65,7 +65,7 @@ class ApplicationController < Sinatra::Base
 
   get "/last_five_foods_submitted" do 
     last_foods = Food.order(created_at: :desc).first(5)
-    last_foods.to_json
+    last_foods.to_json(:include => { :restaurant => {:only => :name}})
   end
 
 end
