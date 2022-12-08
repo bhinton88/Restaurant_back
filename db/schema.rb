@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2022_11_29_034841) do
     t.string "food_type"
     t.integer "phone_number"
     t.string "website"
-    t.boolean "online_ordering"
+    t.string "online_ordering"
     t.string "image"
     t.datetime "created_at"
   end

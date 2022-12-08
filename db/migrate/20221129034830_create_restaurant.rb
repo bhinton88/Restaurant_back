@@ -7,7 +7,7 @@ class CreateRestaurant < ActiveRecord::Migration[6.1]
       t.string :food_type
       t.integer :phone_number
       t.string :website
-      t.boolean :online_ordering
+      t.string :online_ordering
       t.string :image
       t.timestamp :created_at
     end

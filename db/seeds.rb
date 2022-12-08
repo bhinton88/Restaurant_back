@@ -7,7 +7,7 @@ Restaurant.create(
   food_type: "Thai", 
   phone_number: 4053102026, 
   website: "https://www.thaithainorman.com/#/",
-  online_ordering: true,
+  online_ordering: 'Yes',
   image: "https://www.visitnorman.com/uploads/Thai-Thai-Asian-Bistro.jpg"
 )
 
@@ -18,7 +18,7 @@ Restaurant.create(
   food_type: "Italian",
   phone_number: 4052924777,
   website: "https://www.hideawaypizza.com/",
-  online_ordering: true,
+  online_ordering: 'Yes',
   image: "https://images.squarespace-cdn.com/content/v1/5cbf5a350cf57df7fb43982e/1576701466298-IZJRLUGZ6S8HQHXEJFUZ/OKC+Sign+Small.jpg"
 )
 
@@ -29,7 +29,7 @@ Restaurant.create(
   food_type: "German",
   phone_number: 4057997666,
   website: "https://www.royal-bavaria.com/",
-  online_ordering: false,
+  online_ordering: 'No',
   image: "https://fastly.4sqi.net/img/general/600x600/N46yAlCI1R2LVr4I1s61OGNIgn-RMTxltkchUTeC6lY.jpg"
 )
 
@@ -39,7 +39,7 @@ Restaurant.create(
   state: "TX",
   food_type: "Mexican",
   phone_number: 6822597154,
-  online_ordering: true,
+  online_ordering: 'Yes',
   image: "https://img-aws.ehowcdn.com/700x/www.onlyinyourstate.com/wp-content/uploads/2021/12/campo5.png"
 )
 
