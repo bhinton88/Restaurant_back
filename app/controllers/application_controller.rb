@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
   
   get "/restaurants" do
     restaurants = Restaurant.all
-    restaurants.to_json(include: :foods)
+    restaurants.to_json(include: :dishes)
   end
 
   post "/restaurants" do
@@ -31,41 +31,41 @@ class ApplicationController < Sinatra::Base
   #   restaurant.to_json
   # end
 
-  get "/foods" do
-    foods = Food.all
-    foods.to_json(include: :restaurant)
+  get "/dishes" do
+    dishes = Dish.all
+    dishes.to_json(include: :restaurant)
   end
 
-  post "/foods" do
-    food = Food.create(
-      food_name: params[:food_name],
+  post "/dishes" do
+    dish = Dish.create(
+      dish_name: params[:dish_name],
       restaurant_id: params[:restaurant_id],
       price: params[:price],
       description: params[:description],
       image: params[:image]
     )
 
-    food.to_json
+    dish.to_json
   end
 
-  patch "/foods/:id" do 
-    food = Food.find(params[:id])
+  # patch "/dishes/:id" do 
+  #   dish = Dish.find(params[:id])
 
-    food.update(
-      price: params[:price]
-    )
-    food.to_json
-  end
+  #   dish.update(
+  #     price: params[:price]
+  #   )
+  #   dish.to_json
+  # end
 
-  delete "/foods/:id" do
-    food = Food.find(params[:id])
-    food.destroy
-    food.to_json
-  end
+  # delete "/dishes/:id" do
+  #   dish = Dish.find(params[:id])
+  #   dish.destroy
+  #   dish.to_json
+  # end
 
-  get "/last_five_foods_submitted" do 
-    last_foods = Food.order(created_at: :desc).first(5)
-    last_foods.to_json(:include => { :restaurant => {:only => :name}})
+  get "/last_five_dishes_submitted" do 
+    last_dishes = Dish.order(created_at: :desc).first(5)
+    last_dishes.to_json(:include => { :restaurant => {:only => :name}})
   end
 
 end
