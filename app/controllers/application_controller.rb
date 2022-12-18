@@ -21,15 +21,23 @@ class ApplicationController < Sinatra::Base
     restaurant.to_json()
   end
 
-  # patch "/restaurants/:id" do
-  #   restaurant= Restaurant.find(params[:id])
-  #   restaurant.update(
-  #     food_type: params[:food_type],
-  #     website: params[:website],
-  #     online_ordering: params[:online_ordering]
-  #   )
-  #   restaurant.to_json
-  # end
+  patch "/restaurants/:id" do
+    restaurant= Restaurant.find(params[:id])
+    restaurant.update(
+      phone_number: params[:phone_number],
+      website: params[:website],
+      online_ordering: params[:online_ordering]
+    )
+    restaurant.to_json
+  end
+
+  delete "/restaurants/:id" do 
+    restaurant = Restaurant.find(params[:id])
+    restaurant.destroy
+    restaurant.to_json
+  end
+
+################################## Dishes below ################################## 
 
   get "/dishes" do
     dishes = Dish.all
@@ -48,20 +56,11 @@ class ApplicationController < Sinatra::Base
     dish.to_json
   end
 
-  # patch "/dishes/:id" do 
-  #   dish = Dish.find(params[:id])
-
-  #   dish.update(
-  #     price: params[:price]
-  #   )
-  #   dish.to_json
-  # end
-
-  # delete "/dishes/:id" do
-  #   dish = Dish.find(params[:id])
-  #   dish.destroy
-  #   dish.to_json
-  # end
+  delete "/dishes/:id" do
+    dish = Dish.find(params[:id])
+    dish.destroy
+    dish.to_json
+  end
 
   get "/last_five_dishes_submitted" do 
     last_dishes = Dish.order(created_at: :desc).first(5)
