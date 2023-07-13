@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
       image: params[:image]
     )
 
-    restaurant.to_json()
+    restaurant.to_json(include: :dishes)
   end
 
   patch "/restaurants/:id" do

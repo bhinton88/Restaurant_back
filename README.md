@@ -23,10 +23,6 @@ For Back end:
 
 Run `bundle install` to install the gems, then `$ bundle exec rake server` to start the server.
 
-## Status
-
-Still editing and plan to add further features/sorting functionalities 
-
 ## Author
 
 👤 **Bobby Hinton**
